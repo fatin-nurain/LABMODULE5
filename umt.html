@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universiti Malaysia Terengganu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="umt.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="topbar">Universiti Malaysia Terengganu — Inspiring Ocean of Knowledge</div>
+    <div class="header-main">
+        <img src="LOGOUMT.png" class="logo" alt="UMT Logo">
+        <h1>Universiti Malaysia Terengganu</h1>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <ul class="menu">
+        <li><a href="#">ABOUT UMT</a>
+            <ul class="submenu">
+                <li><a href="vision.html">Vision & Mission</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="contact.html">Contact Us & Feedback</a></li>
+            </ul>
+        </li>
+        <li><a href="#">ACADEMICS</a>
+            <ul class="submenu">
+                <li><a href="stem.html">STEM Foundation & Diploma</a></li>
+                <li><a href="undergraduate.html">Undergraduate</a></li>
+                <li><a href="master.html">Master & Doctorate</a></li>
+            </ul>
+        </li>
+        <li><a href="#">STUDENT</a>
+            <ul class="submenu">
+                <li><a href="academic.html">Academic Calendar</a></li>
+                <li><a href="international.html">International Student</a></li>
+                <li><a href="finance.html">Scholarship & Financial Assistance</a></li>
+            </ul>
+        </li>
+        <li><a href="#">CAMPUS LIFE</a>
+            <ul class="submenu">
+                <li><a href="hostel.html">Hostel</a></li>
+                <li><a href="act.html">Universities & University Act</a></li>
+                <li><a href="procedures.html">Academic Procedures & Regulations</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero-slider">
+    <div class="slide-container">
+        <img class="slide active" src="umt1.png" alt="Slide 1">
+        <img class="slide" src="umt2.png" alt="Slide 2">
+        <img class="slide" src="umt3.jpg" alt="Slide 3">
+
+        <!-- Anak panah kiri + kanan -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+</section>
+
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+
+document.querySelector('.next').addEventListener('click', () => {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+});
+
+// Tunjuk slide pertama
+showSlide(slideIndex);
+</script>
+
+
+<script>
+let index = 0;
+const slides = document.getElementById("slideContainer");
+const totalSlides = slides.children.length;
+
+function moveSlide(direction) {
+    index += direction;
+
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+</script>
+
+
+
+
+<!-- FOOTER -->
+<footer>
+    © 2023 Universiti Malaysia Terengganu
+</footer>
+
+</body>
+</html>
